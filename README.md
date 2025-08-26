@@ -7,6 +7,7 @@ A RESTful API for a Todo List application built with Express.js, TypeScript, Pri
 - 🚀 RESTful API with full CRUD operations
 - 🛡️ TypeScript for type safety
 - 🗄️ MySQL database with Prisma ORM
+- 🐳 Docker containerization for easy setup
 - 🔒 Input validation and error handling
 - 🌐 CORS enabled for frontend integration
 - ⚡ Fast and lightweight Express.js server
@@ -17,6 +18,7 @@ A RESTful API for a Todo List application built with Express.js, TypeScript, Pri
 - **TypeScript** - Type safety and better development experience
 - **Prisma** - Modern database toolkit and ORM
 - **MySQL** - Relational database
+- **Docker** - Containerization for easy development setup
 - **CORS** - Cross-origin resource sharing
 - **dotenv** - Environment variable management
 
@@ -26,7 +28,7 @@ A RESTful API for a Todo List application built with Express.js, TypeScript, Pri
 
 - Node.js 18+
 - npm or yarn
-- MySQL database (local or cloud)
+- Docker and Docker Compose (recommended) OR MySQL database (local or cloud)
 
 ### Installation
 
@@ -53,6 +55,18 @@ PORT=5000
 ```
 
 5. Set up the database:
+
+**Option 1: Using Docker (Recommended)**
+```bash
+# Start MySQL container
+docker-compose up -d
+
+# Generate Prisma client and push schema
+npm run db:generate
+npm run db:push
+```
+
+**Option 2: Using your own MySQL server**
 ```bash
 # Generate Prisma client
 npm run db:generate
